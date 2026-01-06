@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'SolaimanLipi', sans-serif;
+        }
+        
+        html, body {
+            height: 100%;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a9d8f 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-shrink: 0;
+            text-align:center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size:1.9rem;
+        }
+        
+        .header-text {
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .back-button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        
+        .date {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+       .preview-question {
+            background-color: #f9f9f9 ;
+            padding: 6px;
+            border-radius: 8px;
+            margin-bottom: 0px;
+            border-left:
+            font-size: 1.0rem;
+            font-weight: 500;
+            color:#00066e;
+          
+            
+        }
+        
+        .preview-answer {
+            padding:6px;
+            margin-bottom: 5px;
+            background-color:#f8f9fa;
+            border-radius: 8px;
+            font-size: clamp(1rem, 2vw, 1.05rem);
+            color:#001c24;
+        }
+  
+        .question {
+            width: 100%;
+            padding: 10px;
+            border-bottom: 2px solid #e1e5eb;
+            background-color: #f8f9fa;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            
+        }
+        
+        .answer {
+            width: 100%;
+            padding: 10px;
+            color: #495057;
+            margin-bottom: 0;
+            margin-align: auto;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e1e5eb;
+            box-sizing: border-box;
+        }
+        
+        .preview-question:last-child,
+        .preview-answer:last-child {
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            width: 100%;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(15px, 3vw, 30px);
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #a2d2df;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            color: #c5e0e6;
+        }
+  
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .preview-question {
+                page-break-inside:0.90px;
+            }
+            
+            .preview-answer {
+                page-break-inside: 0.90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Class 10 - English</h1>
+            <div class="subtitle">Chapter : Two Stories about Flying</div>   
+            <a href="../english.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to chapter
+            </a>
+        </header>
+        
+        <div class="content">
+            
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number" style="color:#0600d1;font-weight:bold;font-size:0.95rem" </span>1.  Why was the young seagull affraid to fly ? Do you think all young birds are affraid to make their first flight or are some birds mare timid than others ? Do you think a human body also finds it challenge to take its first step ?
+                    </div>
+                        
+                        <div class="preview-answer preview-full-width">
+                        <span class="q-answer"></span> <strong >Answer  :</strong ><br>The young seagull was afraid to fly because it was his first flight, and he feared that he might fall and hurt himself. He thought that his wings would not support him while he attempted to make his first flight.<br>Yes, it's quite natural and obvious that doing something for the first time can be frightening and a bit challenging. Certainly, all birds must be afraid to make their first flight.<br>Likewise, a human baby is also afraid and finds it very challenging when it takes its first steps or when it learns to crawl or walk on its own without any support.
+                    </div>
+                        
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 2. "The sight of the food madden him." what does this suggest? What compelled the young seagull to finally fly ?
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>The young seagull failed to muster up the courage to make his first flight. His family constantly upbraided him to take the plunge, but to no avail.<br>They let him stay on the ledge until he was ready to take the plunge. He was left there for more than twenty-four hours and was very hungry by then. Due to this hunger, he was ultimately compelled to fly. Furthermore, his hunger intensified when he saw his mother tearing at a piece of fish that was lying at her feet. He cried desperately, begging her to get some food for him. Seeing this, when his mother came towards him with food in her beak, the little seagull screamed with joy and anticipation. However, she stopped midway, and the young seagull wondered why she did not come closer to him. Maddened by hunger, he dived at the food in his mother's beak. At that moment, he fell outwards and downwards into the great expanse of sea beneath the cliff. He was terrified, and his heart stood still.<br>But soon enough, he felt his wings spread outwards, and he realized that he could fly like others. Therefore, his hunger overpowered his fear, and he finally made his first flight joyfully.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 3. They were beckoning to him, calling shrilly. Why did the seagull's father and mother threaten him and cajole him to fly?
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>The young seagull's parents were constantly beckoning him and he tried everything to make his first flight. However, he was very reluctant to take the plunge due to his fear of falling down from the cliff. He looked at his brothers and sister, who flew away, but he was hesitant to make any effort. Due to this reason, his whole family had left him alone on his ledge and threatened and persuaded him to fly, but all efforts went in vain.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 4. Have you ever had a similar experience where your parents encouraged you to do something that you were too scared to try ? Discuss this in pairs or groups .
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>Yes, I had a similar experience while trying to learn how to ride a bicycle when I was in the fourth standard. Initially, I found it difficult to balance myself and fell down often, which developed a fear of cycling in me. Unable to overcome the fear, I gave up cycling, but my parents would always cajole me to try and practise cycling whenever I get time. My father would hold the bicycle from behind to help me balance myself, but whenever he took off his hand, I would lose balance and fall down. Gradually as I practised every day, my cycling skills improved, and I could ride it without my father's support from behind. This also developed my confidence to a great extent. Thus, I overcame my fear of cycling and started riding the cycle confidently when I practised it daily. Now, I use a cycle while going to and coming from school every day.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 5. In the case of a bird flying seems a natural act, and a foregone conclusion that it should succeed. In the example you have given in answer to the the previous question, was your success guaranteed or was it important for you to try, regardless of a possibility of failure ?
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>It is natural for everyone to face some problems initially while trying to learn or pick up a new skill. Many a time, due to the fear of failure, we are reluctant to perform a particular task or attempt something new. In the case of the seagull, his parents constantly cajoled him into flying. Similarly, when I was learning to ride a cycle for the first time, my father always persuaded me to learn to cycle. Hence, at that stage, it was important for me to overcome my fear and learn cycling for my own good.<br>Yes, my success was assured because if one is focused and determined to achieve something, then success is guaranteed. Moreover, we are all aware of the famous adage, "Practice makes a man perfect".
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 1. "I will take the risk". What is the risk ? Why does the narrator take it ? "
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>The pilot of Dakota DS 088 plane was keen to reach home in England to spend a holiday with his family. On the way, his plane was engulfed in a huge storm of black clouds. So, he decided to fly straight into the storm as he did not want to miss the opportunity to meet his family for a good English breakfast. Thus, he took the risk of flying through the storm even when the visibility was almost nil.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 2. Describe the narrator's experience as he flew the aeroplane into the storm .
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>As the pilot (author) entered the big storm of clouds, his plane started to jump and twirl in the air. He could not see anything outside the plane as it was engulfed by completely black storm clouds.<br>When he looked at the compass and other instruments, they had stopped functioning due to the turbulent weather. It was a fearsome and frightening experience for the pilot. The fuel tank of his plane was also almost empty and he could not fly more than ten minutes in it. Suddenly out of nowhere, he saw another black aeroplane with no lights on its wings appear by his side, and the pilot of that plane beckoned him to follow. The narrator obediently followed the other black plane that had no light. He followed the strange black aeroplane without any choice through the storm and soon landed on the runway safely.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 3. Why does the narrator say , " I landed and was not sorry to talk away from the old Dakota ?"
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>The pilot was delighted to land safely after being caught in a dense storm of dark clouds and was not sorry to walk away from the old Dakota. He was filled with gratitude for the pilot in the other black aeroplane and desperately wanted to thank him for helping him in such a fearsome situation. He felt sorry that he could not thank his benefactor enough for helping him land on the runway safely.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 4. What made the woman in the control centre look at the narrator strangely ?
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>The woman in the control centre looked at the narrator strangely when the narrator mentioned the black aeroplane that helped him land safely on the runway. She gave him a surprised look and told him that nothing except the narrator's plane was in the sky during the storm. The radar showed the narrator's plane as the only one in the night sky.
+                    </div>
+                    
+                        <div class="preview-question preview-full-width">
+                        <span class="q-number"></span> 5. Who do you think helped the narrator to reach safely ? Discuss this among yourselves and give reasons for your answer
+                    </div>
+                                           
+                 <div class="preview-answer preview-full-width"><strong >Answer  :</strong ><br>There is no definite explanation for the appearance of the unknown pilot who helped the narrator. We can assume that it was probably the narrator himself who overcame his fear in the midst of a storm as no other plane was visible in the radar except the narrator's Dakota DS 088. In that frightening situation, the pilot might have fantasized that someone had come to his help. However, he was a good pilot, brave enough to fly through a dense and turbulent storm and land on the runway safely.
+                    </div>
+                    
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Class 10 Study Material - all subjects</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-book"></i> Chapters</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+                    <a href="#"><i class="fas fa-download"></i> Downloads</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 Class 10 Study Portal. All educational materials for study purposes.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'SolaimanLipi', sans-serif;
+        }
+        
+        html, body {
+            height: 100%;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a9d8f 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-shrink: 0;
+            text-align:center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size:1.9rem;
+        }
+        
+        .header-text {
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .back-button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        
+        .date {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+       .preview-question {
+            background-color: #f9f9f9 ;
+            padding: 6px;
+            border-radius: 8px;
+            margin-bottom: 0px;
+            border-left:
+            font-size: 1.0rem;
+            font-weight: 500;
+            color:#00066e;
+          
+            
+        }
+        
+        .preview-answer {
+            padding:6px;
+            margin-bottom: 5px;
+            background-color:#f8f9fa;
+            border-radius: 8px;
+            font-size: clamp(1rem, 2vw, 1.05rem);
+            color:#001c24;
+        }
+  
+        .question {
+            width: 100%;
+            padding: 10px;
+            border-bottom: 2px solid #e1e5eb;
+            background-color: #f8f9fa;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            
+        }
+        
+        .answer {
+            width: 100%;
+            padding: 10px;
+            color: #495057;
+            margin-bottom: 0;
+            margin-align: auto;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e1e5eb;
+            box-sizing: border-box;
+        }
+        
+        .preview-question:last-child,
+        .preview-answer:last-child {
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            width: 100%;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(15px, 3vw, 30px);
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #a2d2df;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            color: #c5e0e6;
+        }
+  
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .preview-question {
+                page-break-inside:0.90px;
+            }
+            
+            .preview-answer {
+                page-break-inside: 0.90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Class 10 - English</h1>
+            <div class="subtitle">Chapter : A Letter to God</div>   
+            <a href="../english.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to chapter
+            </a>
+        </header>
+        
+        <div class="content">
+                               
+                 <div class="preview-answer preview-full-width"><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>1. What did Lencho hope for?</span ><br><strong>Answer : - </strong><br>Lencho hoped for the failing of big rain drops from the sky.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>2. Why did Lencho say the raindrops were like 'new coins'?</span ><br><strong>Answer : - </strong><br>Lencho said that the raindrops were like 'new coins 'because his confirmed needed it. The shower of rain would harvest good profit.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>3. How did the rain change? What happened to <br>Lencho’s fields?</span ><br><strong>Answer : - </strong><br>The rain changed into a hailstorm. The crops in Lencho’s field were completely destroyed.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>4. What were Lencho’s feelings when the hail stopped?</span ><br><strong>Answer : - </strong><br>Lencho's felt sad and helpless. He said that they would die of starvation that year.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>5. Who or what did Lencho have faith in?what did he do?</span ><br><strong>Answer : - </strong><br>Lencho have faith in God.<br>Lencho wrote a letter to God asking for a one hundread pesos.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>6. Who read the letter?</span ><br><strong>Answer : - </strong><br>The letter was read by the postmaster.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>7. What did the postmaster do then?</span ><br><strong>Answer : - </strong><br>The postmaster decided to replied the answer the letter of Lencho.<br>So, the postmaster collected some money from the post office employees and gave a part of his selary collected seventy pesos and sent to Lencho.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>8. Was Lencho surprised to find a letter for him with money in it?</span ><br><strong>Answer : - </strong></span><br>No, Lencho was not surprised to get a letter with money in it. Because he was great faith in god.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>9. What made him angry?</span ><br><strong>Answer : - </strong><br>Lencho was very angry when he counted the money, he was get only seventy pesos out of hundread pesos.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>10. Who does Lencho have complete faith in? Which sentences in the story tell you this?</span ><br><strong>Answer : - </strong><br>Lencho have complete faith in God.<br>The story shows this when Lencho says that God can see everything and that only God can help him.<br>He also writes a letter to God asking for help.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>11. Why does the postmaster send money to Lencho? Why does he sign the letter 'God'?</span ><br><strong>Answer : - </strong><br>The postmaster send the money to Lencho because the postmaster didn't break to faith in God of Lencho.<br>He sign on the letter to kept greatly faith.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>12. Did Lencho try to find out who had sent the money to him? Why /why not?</span ><br><strong>Answer : - </strong><br>Lencho didn't try to find out who had send the money to him. Because Lencho have deep faith on God. Lencho thought that god send the money to him salded problems.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>13. Who does Lencho think has taken the rest of the money? What is the irony in the situation?</span ><br><strong>Answer : - </strong><br> Lencho thinks that the post office employees have taken the rest of the money.<br>Lencho thinks that the post office employees have taken the rest of the money.<br>The irony is that the same people who helped Lencho by collecting money are blamed by him as thieves.<br>The irony is that the same people who helped Lencho by collecting money are blamed by him as thieves.<br><span style="color:#333;font-weight:bold;font-size:1.1rem;"><br>Additional question and answer</span ><br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>1. Who was Lencho? What was his main profession?</span ><br><strong>Answer : - </strong><br>Lencho was a farmer. His main profession was working on his farm in a valley.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>2. What did Lencho hope for at the beginning of the story?</span ><br><strong>Answer : - </strong><br>At the beginning, Lencho hoped for rain. His crops needed water to grow.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>3. How did Lencho feel when it started to rain? Why did his feeling change?</span ><br><strong>Answer : - </strong><br>At first, Lencho was very happy because his crops needed the rain. His feeling changed to sadness because the rain turned into a hailstorm. The hail destroyed all his crops.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>4. What was Lencho’s only hope after the hailstorm?</span ><br><strong>Answer : - </strong><br>After the storm, Lencho’s only hope was God. He believed God would help him.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>5. Why did Lencho write a letter to God? What did he ask for?</span><br><strong>Answer : - </strong><br>Lencho wrote a letter to God because he had lost everything and needed money. He asked God to send him 100 pesos to sow his fields again and feed his family.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>6. Who received Lencho’s letter? What did they do?</span><br><strong>Answer : - </strong><br>The postman received the letter and showed it to the postmaster. The postmaster decided to help Lencho. He collected money from his employees and friends and sent 70 pesos to Lencho.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>7. Why was Lencho not surprised to see the money in the letter?</span><br><strong>Answer : - </strong><br>Lencho was not surprised because he had complete faith in God. He was sure that God would send him the money he asked for.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>8. Why was Lencho angry when he counted the money?</span ><br><strong>Answer : - </strong><br>Lencho was angry because he received only 70 pesos, but he had asked God for 100 pesos. He thought the post office employees had stolen the remaining 30 pesos.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>9. What did Lencho do after receiving the money?</span ><br><strong>Answer : - </strong><br>After receiving the money, Lencho wrote another letter to God. In the letter, he asked God to send the remaining 30 pesos directly and not through the post office, because he thought the employees were thieves.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>10. What does this story tell us about Lencho’s character?</span ><br><strong>Answer : - </strong><br>The story tells us that Lencho was a hard-working farmer with strong faith in God. However, he was also naive and quick to accuse others without proof.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>11. What is the irony in the story "A Letter to God"?</span ><br><strong>Answer : - </strong><br>The irony is that the post office employees were the kind people who helped Lencho. But Lencho, with his blind faith, called them thieves and did not thank them. He never knew who actually sent the money.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>12. What is the main theme of the story?</span ><br><strong> Answer :</strong ><br>The main theme is the power of faith, but also its contradiction with human reality. It shows how faith can bring help, but can also blind a person to the goodness of others.
+                    </div>
+                    
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Class 10 Study Material - all subjects</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-book"></i> Chapters</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+                    <a href="#"><i class="fas fa-download"></i> Downloads</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 Class 10 Study Portal. All educational materials for study purposes.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

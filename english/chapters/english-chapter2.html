@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'SolaimanLipi', sans-serif;
+        }
+        
+        html, body {
+            height: 100%;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a9d8f 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-shrink: 0;
+            text-align:center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size:1.9rem;
+        }
+        
+        .header-text {
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .back-button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        
+        .date {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+       .preview-question {
+            background-color: #f9f9f9 ;
+            padding: 6px;
+            border-radius: 8px;
+            margin-bottom: 0px;
+            border-left:
+            font-size: 1.0rem;
+            font-weight: 500;
+            color:#00066e;
+          
+            
+        }
+        
+        .preview-answer {
+            padding:6px;
+            margin-bottom: 5px;
+            background-color:#f8f9fa;
+            border-radius: 8px;
+            font-size: clamp(1rem, 2vw, 1.05rem);
+            color:#001c24;
+        }
+  
+        .question {
+            width: 100%;
+            padding: 10px;
+            border-bottom: 2px solid #e1e5eb;
+            background-color: #f8f9fa;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            
+        }
+        
+        .answer {
+            width: 100%;
+            padding: 10px;
+            color: #495057;
+            margin-bottom: 0;
+            margin-align: auto;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e1e5eb;
+            box-sizing: border-box;
+        }
+        
+        .preview-question:last-child,
+        .preview-answer:last-child {
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            width: 100%;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(15px, 3vw, 30px);
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #a2d2df;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            color: #c5e0e6;
+        }
+  
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .preview-question {
+                page-break-inside:0.90px;
+            }
+            
+            .preview-answer {
+                page-break-inside: 0.90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Class 10 - English</h1>
+            <div class="subtitle">Chapter : Nelson Mandela</div>   
+            <a href="../english.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to chapter
+            </a>
+        </header>
+        
+        <div class="content">
+                               
+                 <div class="preview-answer preview-full-width"><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>1. Where did the ceremonies take place? Can you name any public buildings in India that are made of sandstone?</span><br><strong >Answer  :</strong ><br>The inauguration ceremonies took place in the amphitheatre union building of pretoria.<br>India are building of sandstone the rastrapoti bhawn in new delhi and the parliament house of new delhi .<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>2. Can you say how 10 May is an 'autumn day' in South Africa? </span ><br><strong >Answer  :</strong ><br>Yes, 10th may is an 'autumn day ' in south africa because of its weather and the dawning of freedom. After about 300 years of white rule mr mandela's african national congress (ANC)party won 252 of the 400 seats in the first democratic elections of south Africa's history. The inauguration ceremony took place in the union buildings amphithetre in pretoria today,attend by politicians and dignitaries from more than 140 countries around the world .<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>3. At the beginning of his speech, Mandela mentions "an extraordinary human disaster", What does he mean by this? What is the "glorious... human achievement" he speaks of at the end?</span ><br><strong >Answer : </strong ><br>Nelson Mandela, in his speech “An Extraordinary Human Disaster”, expressed his strong feelings against the system of Apartheid in South Africa. Apartheid was a system in which people were separated on the basis of colour. The black people suffered the most because they were treated unfairly and denied their basic rights and freedom. Mandela himself suffered under this system. He was sent to prison for 18 years on Robben Island, where he was badly treated by the authorities. Despite all this suffering, Mandela felt proud that he became the first Black President of South Africa. This was a great achievement for him and for the black people, who had long been deprived of basic needs and treated badly.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>4. What does Mandela thank the international leaders for?</span ><br><strong >Answer :</strong ><br>Nelson mandela thanked the international leaders for their helped,support to took their possetion and common victory for justice peace and human dignity .<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>5. What ideals does he set out for the future of South Africa?</span ><br><strong >Answer :</strong ><br>Mandela set out for the further of south africa the ideals of poverty removals discrimination based on racial and gender descrimination .<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>6. What do the military generals do? How has their attitude changed, and why?</span ><br><strong >Answer :</strong ><br>The military generals do their respect for nelson mandela instead of arrest him.<br>Their attitude changed because of nelson mandela own the elections and formed a newly government .Nelson Mandela was president of newly government. So, their attitude was greatly changed.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>7. Why were two national anthems sung?</span ><br><strong >Answer :</strong ><br>The inaugurations the two national anthems songs were sung white people and black people. Because their had a separate system in democracy.they have got own their freedom.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>8. How does Mandela describe the systems of government in his country (i) in the first decade, and (ii) in the final decade, of the twentieth century?</span ><br><strong >Answer :</strong ><br>Mandela thanked the international leaders for coming to attend his swearing-in ceremony. He felt proud because not long ago South Africans were treated as outlaws by the world. He appreciated the leaders for travelling from different countries to witness the oath-taking of the first Black President of South Africa. Their presence showed international support and recognition of South Africa as a new free and democratic nation. This event was a victory for justice, peace and human dignity.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>9. What does courage mean to Mandela?</span ><br><strong >Answer :</strong ><br>According to nelson mandela courage means that absence of fear over trumphit. a brave man didn't feel afraid he always conquer the fear.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>10. Which does he think is natural, to love or to hate?</span ><br><strong >Answer :</strong ><br>According to nelson Mandela every man has come to life is love naturally. Courage was not the absence of fear, but the triumph over it. A brave man is not one who does not feel afraid, but one who conquers that fear.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>11. What "twin obligations" does Mandela mention?</span ><br><strong >Answer :</strong ><br>According to nelson Mandela every man has a twin obligations. first is to his family to his parents, to his wife and children. And second is to his people ,to his country and to his community.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>12. What did being free mean to Mandela as a boy, and as a student? How does he contrast these "transitory freedoms" with "the basic and honourable freedoms"?</span ><br><strong >Answer :</strong ><br>Nelson Mandela in the first decade when he was a boyhood or as a student the white people errected system of domination against the black people and curtailed the all freedom.<br>In the last decade of twenty century nelson Mandela and alll people of south africa they had got their own right and freedom without the race of skin colour.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>13. Does Mandela think the oppressor is free? Why/Why not?</span ><br><strong >Answer :</strong ><br>Mandela does not feel that the oppressor is free because, in his opinion, an oppressor is like a victim of hatred who is locked behind the bars of prejudice and narrow-mindedness. He feels that both the oppressor and the oppressed are robbed of their humanity and peace of mind.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>14. Why did such a large number of international leaders attend the inauguration ? What did it signify the triumph of?</span ><br><strong >Answer :</strong ><br>Being a part of the inauguration ceremony, the international leaders showed solidarity with the end of Apartheid as a gesture from the international community. This signified the victory of good over evil and the triumph of a tolerant society without prejudice and discrimination of caste, colour or creed.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>15. What does Mandela mean when he says he is "simply the sum of all those African patriots" who had gone before him?</span ><br><strong >Answer :</strong ><br>By saying that he is "simply the sum of all those African patriots", Mandela offers his tribute to all the people who had sacrificed their lives in favour of the struggle for freedom. He says that he shall always remain grateful and thankful to those who had gone before him because those freedom fighters had paved the path of cooperation and unity for him. Therefore, Mandela felt that when he came to power, he would bring equality among his people with their support and cooperation.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>16. Would you agree that the "depths of oppression" create "heights of character "? How does Mandela illustrate this? Can you add your own examples to the argument?</span ><br><strong >Answer :</strong ><br>Yes, I agree with the statement that "depths of oppression" do create 'heights of character". Nelson Mandela illustrates this by citing examples of great heroes of South Africa such as Oliver Tambo, Walter Sisulu, Chief Luthulis, Yusuf Dadoos, Bram Fischers, and Robert Sobukwes, among others who inspired others by sacrificing their lives in the long struggle for freedom.<br>In India's pre-Independence era, there was a galaxy of great leaders who didn't bend their knees to the oppression of British rule, such as Netaji Subhash Chandra Bose, Mahatma Gandhi, Sardar Vallabhbhai Patel, Lala Lajpat Rai, Chandra Shekhar Ajad, Bhagat Singh and many more. Nelson Mandela seems to be absolutely right, if we compare them with the quality of political leaders that came later. It seems that great leaders are created in the crucible of oppression and suffering.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>17. How did Mandela's understanding of freedom change with age an experience?</span ><br><strong >Answer :</strong ><br>With age and rich experience, Mandela understood the essence of freedom in everyone's life. As a young boy, he always thought that he was born free and could do anything that he wanted. He strongly believed that as long as he obeyed his father and abided by the customs of his tribe, he was free in every possible way.<br>However, as he grew older, he started feeling that freedom was required to raise a family and to earn a livelihood, and this started dominating his thoughts and views. In due course of time, he realised that he was selfish and was leading an illusionary life during his boyhood. He slowly understood that it was not his freedom alone that was being curtailed, but the freedom of all Black people was retrenched. Mandela understood that his people were being deprived and discriminated and this led him to develop a hunger for the freedom of his people.<br><span style="color:#0600d1;font-weight:bold;font-size:0.95rem"><br>18. How did Mandela's 'hunger for freedom' change his life?</span ><br><strong >Answer :</strong ><br>During his youth, Mandela realised that it was not just his freedom alone that was being curtailed, but the freedom of all Black people. The hunger for his own freedom became the hunger for freedom for all his fellow brothers and sisters. In the process, this changed the fearful man into a bold rebel. Mandela sacrificed the comforts of a settled family life to fight for the freedom of his countrymen. He joined the African National Congress, and this transformed him from a frightened young man into a fearless person who fought against racial prejudice and colour discrimination.
+                    </div>
+                    
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Class 10 Study Material - all subjects</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-book"></i> Chapters</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+                    <a href="#"><i class="fas fa-download"></i> Downloads</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 Class 10 Study Portal. All educational materials for study purposes.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
